@@ -1,0 +1,29 @@
+<h1>SHOW ME MY CATS</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="2"><%= @cat.name %></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @cat.birth_date %></td>
+            <td><%= @cat.color %></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="2"><%= @cat.description %> DESCRIP DESCRIP DESCRIP</td>
+        </tr>
+    </tfoot>
+</table>
+
+<!-- 
+<ul>
+  <li><%#= @cat.name %></li>
+  <li><%#= @cat.birth_date %></li>
+  <li><%#= @cat.color %></li>
+  <li><%#= @cat.description %> A description would go here</li>
+  
+</ul> -->

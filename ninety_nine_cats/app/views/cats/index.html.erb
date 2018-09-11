@@ -2,9 +2,13 @@
 
 <ul>
   <% @cats.each do |cat| %>
-  <li><%= cat.name %></li>
-  <li> <a href="<%= cat_url(cat) %>">SHOW THE CAT!</a> </li>
+  <li></li>
+  <ul>
+    <li><%= cat.name %></li>
+    <li> <a href="<%= cat_url(cat) %>">SHOW THE CAT!</a> </li>
+  </ul>
+  <br>
   
-  <%= end %>
+  <% end %>
   
 </ul>

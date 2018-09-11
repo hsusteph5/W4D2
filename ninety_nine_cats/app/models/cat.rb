@@ -16,10 +16,13 @@ include ActionView::Helpers::DateHelper
 class Cat < ApplicationRecord
   validates :birth_date, :color, :name, :sex, presence: true
   validates :sex, inclusion: { in: ["M", "F"]}
-  validate age
   
-  #validates the age if the time is the future 
-  def age
-    birth_date > Time.now
-  end
+  #what to do with age? validation?
+  #drop tables for the seed 
+  # validate age
+  # 
+  # #validates the age if the time is the future 
+  # def age
+  #   birth_date > Time.now
+  # end
 end
