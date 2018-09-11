@@ -22,7 +22,7 @@ class Cat < ApplicationRecord
   # validate age
   # 
   # #validates the age if the time is the future 
-  # def age
-  #   birth_date > Time.now
-  # end
+  def age
+    time_ago_in_words(birth_date)
+  end
 end
