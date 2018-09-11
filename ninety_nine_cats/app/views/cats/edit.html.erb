@@ -1,35 +1,37 @@
-<h1> CREATE A NEW CAT! </h1>
-<form class="" action="/cats" method="post">
+<h1> EDIT AN OLD CAT! </h1>
+<form class="" action="<% cat_url(@cat) %>" method="post">
+  <input type="hidden" name="_method" value="patch">
   <label for="cat[name]">Name: 
-    <input type="text" name="cat[name]" value="">
+    <input type="text" name="cat[name]" value="<%= @cat.name %>">
   </label>
   <br>
   <br>
   <label for="cat[sex]">Sex: 
-    <input type="radio" name="cat[sex]" value="M"> Male
-    <input type="radio" name="cat[sex]" value="F"> Female
+    <!-- "checked = \"checked\"" going from ruby to html (need to escape the quotations originally checked = "checked") -->
+    <input type="radio" name="cat[sex]" value="M" <%= @cat.sex == "M" ? "checked = \"checked\"" : "" %>> Male
+    <input type="radio" name="cat[sex]" value="F" <%= @cat.sex == "F" ? "checked = \"checked\"" : "" %>> Female
     <br>
   </label>
   <br>
   <select name="cat[color]">
     <option value="disabled">--select--</option>
-    <option value="green">green</option>
-    <option value="blue">blue</option>
-    <option value="red">red</option>
-    <option value="brown">brown</option>
-    <option value="silver">silver</option>
+    <option value="green" <%= @cat.color == "green" ? "selected" : "" %>>green</option>
+    <option value="blue" <%= @cat.color == "blue" ? "selected" : "" %>>blue</option>
+    <option value="red" <%= @cat.color == "red" ? "selected" : "" %>>red</option>
+    <option value="brown" <%= @cat.color == "brown" ? "selected" : "" %>>brown</option>
+    <option value="silver" <%= @cat.color == "silver" ? "selected" : "" %>>silver</option>
   </select>
   <br>
   <br>
   
   <label for="cat[birth_date]">Bdizzle
-        <input type="date" name="cat[birth_date]"/>
+        <input type="date" name="cat[birth_date]" value="<%= @cat.birth_date %>"/>
   </label>
   
   <br> <br>
   
   <label for="cat[description]"> Kitty descrip <br> <br>
-    <textarea rows="3" cols="33" name="cat[description]" value="" wrap="hard"> </textarea>
+    <textarea rows="3" cols="33" name="cat[description]" value="" wrap="hard"> <%= @cat.description%> </textarea>
   </label>
   <br> <br>
   <input type="submit" value="CATZ4DAZE">
