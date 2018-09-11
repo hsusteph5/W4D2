@@ -33,3 +33,17 @@ Migrating to CreateCats (20180911183052)
   ↳ bin/rails:9
   [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /usr/local/var/rbenv/versions/2.5.0/bin/annotate:23
+Started GET "/cats" for 127.0.0.1 at 2018-09-11 13:55:12 -0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by CatsController#index as HTML
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 3.9ms)
+
+
+
+NameError - undefined local variable or method `age' for #<Class:0x00007fb1e9e01670>:
+  app/models/cat.rb:19:in `<class:Cat>'
+  app/models/cat.rb:16:in `<main>'
+  app/controllers/cats_controller.rb:3:in `index'
+
+Started POST "/__better_errors/8857cbddacc7bcf8/variables" for 127.0.0.1 at 2018-09-11 13:55:13 -0700

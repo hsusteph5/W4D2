@@ -15,6 +15,7 @@ include ActionView::Helpers::DateHelper
 
 class Cat < ApplicationRecord
   validates :birth_date, :color, :name, :sex, presence: true
+  validates :sex, inclusion: { in: ["M", "F"]}
   validate age
   
   #validates the age if the time is the future 
